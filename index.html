@@ -3,1756 +3,860 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RP POP | Multi-Language Music Player</title>
+    <title>Happy Birthday Radhika!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
-
-        :root {
-            --primary: #00f3ff;
-            --secondary: #9d4edd;
-            --accent: #ff2e63;
-            --dark: #0a0a1a;
-            --darker: #050510;
-            --light: #f0f0ff;
-            --card-bg: rgba(20, 20, 40, 0.85);
-            --success: #00ff9d;
-            --current-rgb: 0, 243, 255;
-            --glow: 0 0 20px rgba(var(--current-rgb), 0.7);
-        }
-
+        
         body {
-            background: linear-gradient(135deg, var(--darker), var(--dark));
-            color: var(--light);
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #5a3d5c;
             overflow-x: hidden;
-            position: relative;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(var(--current-rgb), 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(157, 78, 221, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(255, 46, 99, 0.05) 0%, transparent 50%);
-            z-index: -2;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
             padding: 20px;
         }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 25px 0;
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px;
+            border: 8px solid #ffeb3b;
+        }
+        
+        .header {
+            text-align: center;
             margin-bottom: 40px;
             position: relative;
         }
-
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(var(--current-rgb), 0.5), transparent);
+        
+        h1 {
+            font-size: 4rem;
+            color: #e91e63;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 0 #ffeb3b, 6px 6px 0 rgba(0,0,0,0.1);
+            animation: bounce 2s infinite alternate;
+            font-family: 'Dancing Script', cursive;
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 20px;
+        
+        .birthday-person {
+            font-size: 4.5rem;
+            color: #9c27b0;
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 800;
+            background: linear-gradient(45deg, #ff4081, #7b1fa2, #ff9800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+            font-family: 'Poppins', sans-serif;
         }
-
-        .logo-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, rgb(var(--current-rgb)), var(--secondary));
-            border-radius: 18px;
+        
+        .tagline {
+            font-size: 1.8rem;
+            color: #ff5722;
+            font-style: italic;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .special-message-container {
+            background: linear-gradient(135deg, #fff9c4, #ffecb3);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-left: 8px solid #ff4081;
             position: relative;
-            box-shadow: var(--glow);
+            overflow: hidden;
+        }
+        
+        .special-message-container:before {
+            content: "✨";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 2rem;
+            animation: twinkle 2s infinite;
+        }
+        
+        .special-message-container:after {
+            content: "🎉";
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 2rem;
+            animation: twinkle 2s infinite reverse;
+        }
+        
+        .message-title {
+            font-size: 2.2rem;
+            color: #e91e63;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
-            animation: float 3s ease-in-out infinite;
+            gap: 15px;
         }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .logo-icon i {
-            color: var(--darker);
-            font-size: 2rem;
-        }
-
-        .logo h1 {
-            font-size: 2.8rem;
-            background: linear-gradient(to right, rgb(var(--current-rgb)), var(--secondary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 25px rgba(var(--current-rgb), 0.5);
-            font-weight: 800;
-            letter-spacing: 1.5px;
-        }
-
-        .search-container {
-            display: flex;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 15px;
-            padding: 12px 25px;
-            width: 350px;
-            border: 1px solid rgba(var(--current-rgb), 0.2);
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .search-container:focus-within {
-            border-color: rgb(var(--current-rgb));
-            box-shadow: 0 0 20px rgba(var(--current-rgb), 0.4);
-            transform: translateY(-2px);
-        }
-
-        .search-container i {
-            color: rgb(var(--current-rgb));
-            margin-right: 12px;
+        
+        .special-message {
             font-size: 1.3rem;
+            line-height: 1.8;
+            color: #5a3d5c;
+            text-align: center;
         }
-
-        .search-container input {
-            background: transparent;
-            border: none;
-            outline: none;
-            color: var(--light);
-            font-size: 1.1rem;
-            width: 100%;
+        
+        .special-message p {
+            margin-bottom: 20px;
         }
-
-        .search-container input::placeholder {
-            color: rgba(224, 224, 255, 0.6);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 35px;
-        }
-
-        nav a {
-            color: var(--light);
-            text-decoration: none;
+        
+        .highlight {
+            background-color: rgba(255, 64, 129, 0.1);
+            padding: 3px 8px;
+            border-radius: 5px;
             font-weight: 600;
-            transition: all 0.3s ease;
-            position: relative;
-            font-size: 1.1rem;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .message-box, .gallery-box {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .message-box:hover, .gallery-box:hover {
+            transform: translateY(-10px);
+        }
+        
+        .box-title {
+            font-size: 1.8rem;
+            color: #2196f3;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px dashed #ff9800;
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 8px 15px;
-            border-radius: 10px;
         }
-
-        nav a i {
-            font-size: 1.3rem;
+        
+        .message-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #555;
         }
-
-        nav a:hover {
-            color: rgb(var(--current-rgb));
-            background: rgba(var(--current-rgb), 0.1);
-        }
-
-        nav a.active {
-            color: rgb(var(--current-rgb));
-            background: rgba(var(--current-rgb), 0.15);
-        }
-
-        .playlist-selector {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .playlist-btn {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(var(--current-rgb), 0.2);
-            color: var(--light);
-            padding: 15px 30px;
-            border-radius: 15px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .playlist-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(var(--current-rgb), 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .playlist-btn:hover::before {
-            left: 100%;
-        }
-
-        .playlist-btn:hover {
-            background: rgba(var(--current-rgb), 0.15);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(var(--current-rgb), 0.3);
-        }
-
-        .playlist-btn.active {
-            background: linear-gradient(135deg, rgba(var(--current-rgb), 0.9), rgba(157, 78, 221, 0.9));
-            color: var(--dark);
-            box-shadow: 0 10px 25px rgba(var(--current-rgb), 0.5);
-            transform: translateY(-2px);
-        }
-
-        .playlist-btn i {
-            font-size: 1.3rem;
-        }
-
-        .main-content {
+        
+        .gallery {
             display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 40px;
-            margin-top: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
         }
-
-        .player-section {
-            background: var(--card-bg);
-            border-radius: 25px;
-            padding: 40px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(var(--current-rgb), 0.15);
-            backdrop-filter: blur(15px);
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
+        
+        .gallery-item {
+            height: 140px;
+            border-radius: 15px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-
-        .player-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(var(--current-rgb), 0.05) 0%, transparent 70%);
-            z-index: -1;
+        
+        .gallery-item:hover {
+            transform: scale(1.1) rotate(3deg);
         }
-
-        .album-art {
-            width: 320px;
-            height: 320px;
-            margin: 0 auto 40px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-            position: relative;
-            border: 2px solid rgba(var(--current-rgb), 0.3);
-            transition: all 0.5s ease;
+        
+        .gallery-item:nth-child(1) {
+            background-color: #ffeb3b;
+            background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
         }
-
-        .album-art:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 40px rgba(var(--current-rgb), 0.3);
+        
+        .gallery-item:nth-child(2) {
+            background-color: #e91e63;
+            background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
         }
-
-        .album-art img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
+        
+        .gallery-item:nth-child(3) {
+            background-color: #4caf50;
+            background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
         }
-
-        .album-art:hover img {
-            transform: scale(1.05);
+        
+        .gallery-item:nth-child(4) {
+            background-color: #2196f3;
+            background-image: url('https://images.unsplash.com/photo-1535254973040-607b474cb50d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
         }
-
-        .album-art::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(var(--current-rgb), 0.2), rgba(157, 78, 221, 0.2));
-            pointer-events: none;
-        }
-
-        .song-info {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .song-title {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: rgb(var(--current-rgb));
-            font-weight: 800;
-            text-shadow: 0 0 15px rgba(var(--current-rgb), 0.5);
-            letter-spacing: 0.5px;
-        }
-
-        .song-artist {
-            font-size: 1.5rem;
-            color: var(--light);
-            opacity: 0.9;
-            margin-bottom: 15px;
-        }
-
-        .song-language {
-            display: inline-block;
-            background: rgba(var(--current-rgb), 0.2);
-            color: rgb(var(--current-rgb));
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: 600;
-            border: 1px solid rgba(var(--current-rgb), 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .progress-area {
-            margin-bottom: 40px;
-        }
-
-        .progress-bar {
-            height: 10px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            cursor: pointer;
-            position: relative;
-            margin-bottom: 15px;
-            overflow: hidden;
-        }
-
-        .progress-bar::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(var(--current-rgb), 0.2), transparent);
-            animation: shimmer 2s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .progress {
-            height: 100%;
-            width: 30%;
-            background: linear-gradient(90deg, rgb(var(--current-rgb)), var(--secondary));
-            border-radius: 10px;
-            position: relative;
-            transition: width 0.1s linear;
-            box-shadow: 0 0 10px rgba(var(--current-rgb), 0.5);
-        }
-
-        .progress::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -8px;
-            transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
-            background: rgb(var(--current-rgb));
-            border-radius: 50%;
-            box-shadow: 0 0 15px rgb(var(--current-rgb));
-        }
-
-        .timer {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.1rem;
-            opacity: 0.9;
-            font-weight: 500;
-        }
-
+        
         .controls {
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .control-btn {
-            background: rgba(255, 255, 255, 0.08);
-            border: none;
-            color: var(--light);
-            font-size: 1.6rem;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(var(--current-rgb), 0.2);
-        }
-
-        .control-btn:hover {
-            color: rgb(var(--current-rgb));
-            background: rgba(var(--current-rgb), 0.15);
-            transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(var(--current-rgb), 0.4);
-        }
-
-        .play-pause {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, rgb(var(--current-rgb)), var(--secondary));
-            color: var(--dark);
-            font-size: 2rem;
-            box-shadow: 0 10px 25px rgba(var(--current-rgb), 0.5);
-            border: none;
-        }
-
-        .play-pause:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 30px rgba(var(--current-rgb), 0.7);
-        }
-
-        .volume-control {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            gap: 20px;
             margin-top: 30px;
-            justify-content: center;
+            flex-wrap: wrap;
         }
-
-        .volume-control i {
-            color: rgb(var(--current-rgb));
-            font-size: 1.5rem;
-        }
-
-        .volume-slider {
-            width: 150px;
-            -webkit-appearance: none;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            outline: none;
-        }
-
-        .volume-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: rgb(var(--current-rgb));
+        
+        .btn {
+            padding: 16px 32px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
             cursor: pointer;
-            box-shadow: 0 0 10px rgb(var(--current-rgb));
-            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
-
-        .volume-slider::-webkit-slider-thumb:hover {
-            transform: scale(1.2);
-            box-shadow: 0 0 15px rgb(var(--current-rgb));
+        
+        .btn-music {
+            background: linear-gradient(to right, #ff4081, #7b1fa2);
+            color: white;
         }
-
-        .playlist-section {
-            background: var(--card-bg);
-            border-radius: 25px;
+        
+        .btn-cake {
+            background: linear-gradient(to right, #ff9800, #ff5722);
+            color: white;
+        }
+        
+        .btn-wish {
+            background: linear-gradient(to right, #2196f3, #03a9f4);
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cake-container {
+            display: none;
+            text-align: center;
+            margin-top: 40px;
             padding: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(var(--current-rgb), 0.15);
-            backdrop-filter: blur(15px);
-            max-height: 700px;
-            overflow-y: auto;
-            position: relative;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border: 5px solid #ffeb3b;
         }
-
-        .playlist-section::before {
-            content: '';
+        
+        .cake {
+            position: relative;
+            width: 220px;
+            height: 120px;
+            margin: 0 auto 25px;
+        }
+        
+        .layer {
             position: absolute;
+            border-radius: 12px;
+        }
+        
+        .layer-bottom {
+            width: 200px;
+            height: 70px;
+            background: linear-gradient(to bottom, #ff9800, #ff5722);
+            bottom: 0;
+            left: 10px;
+        }
+        
+        .layer-middle {
+            width: 170px;
+            height: 60px;
+            background: linear-gradient(to bottom, #ffb74d, #ff9800);
+            bottom: 70px;
+            left: 25px;
+        }
+        
+        .layer-top {
+            width: 140px;
+            height: 50px;
+            background: linear-gradient(to bottom, #ffcc80, #ffb74d);
+            bottom: 130px;
+            left: 40px;
+        }
+        
+        .candle {
+            position: absolute;
+            width: 12px;
+            height: 40px;
+            background: #ffeb3b;
+            bottom: 180px;
+            left: 104px;
+            border-radius: 5px;
+        }
+        
+        .flame {
+            position: absolute;
+            width: 24px;
+            height: 40px;
+            background: radial-gradient(ellipse at center, #ffeb3b, #ff9800);
+            border-radius: 50% 50% 20% 20%;
+            bottom: 220px;
+            left: 98px;
+            animation: flicker 0.5s infinite alternate;
+            box-shadow: 0 0 20px #ff9800;
+        }
+        
+        /* HEARTS CONTAINER */
+        .hearts-container {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at top right, rgba(var(--current-rgb), 0.05) 0%, transparent 50%);
             pointer-events: none;
-        }
-
-        .playlist-section h2 {
-            margin-bottom: 25px;
-            color: rgb(var(--current-rgb));
-            font-size: 1.8rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 700;
-        }
-
-        .playlist {
-            list-style: none;
-        }
-
-        .playlist li {
-            padding: 18px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            border-radius: 15px;
-            margin-bottom: 10px;
-            position: relative;
+            z-index: 1;
             overflow: hidden;
         }
-
-        .playlist li::before {
-            content: '';
+        
+        .heart {
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(var(--current-rgb), 0.1), transparent);
-            transition: left 0.5s ease;
+            font-size: 24px;
+            opacity: 0;
+            animation: heartFloat 8s linear infinite;
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
         }
-
-        .playlist li:hover::before {
-            left: 100%;
+        
+        /* PINK HEARTS */
+        .heart.pink {
+            color: #ff4081;
+            text-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
         }
-
-        .playlist li:hover {
-            background: rgba(var(--current-rgb), 0.1);
-            transform: translateX(10px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        
+        /* RED HEARTS */
+        .heart.red {
+            color: #e91e63;
+            text-shadow: 0 0 10px rgba(233, 30, 99, 0.5);
         }
-
-        .playlist li.active {
-            background: rgba(var(--current-rgb), 0.15);
-            border-left: 4px solid rgb(var(--current-rgb));
-            transform: translateX(5px);
+        
+        .decoration {
+            position: absolute;
+            font-size: 2rem;
+            z-index: 1;
+            opacity: 0.7;
+            animation: float 15s infinite linear;
         }
-
-        .playlist li .playlist-img {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            overflow: hidden;
-            flex-shrink: 0;
-            border: 1px solid rgba(var(--current-rgb), 0.2);
-        }
-
-        .playlist li .playlist-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .playlist li:hover .playlist-img img {
-            transform: scale(1.1);
-        }
-
-        .playlist-info {
-            flex: 1;
-        }
-
-        .playlist-info h4 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .playlist-info p {
-            font-size: 0.95rem;
-            opacity: 0.8;
-            margin-bottom: 5px;
-        }
-
-        .playlist-language {
-            display: inline-block;
-            background: rgba(var(--current-rgb), 0.2);
-            color: rgb(var(--current-rgb));
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            border: 1px solid rgba(var(--current-rgb), 0.3);
-        }
-
-        .playlist-duration {
-            font-size: 0.95rem;
-            opacity: 0.8;
-            font-weight: 500;
-        }
-
-        .visualizer {
-            height: 120px;
-            width: 100%;
+        
+        .footer {
             margin-top: 40px;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            gap: 6px;
+            text-align: center;
+            color: #5a3d5c;
+            font-size: 1.1rem;
+            padding: 20px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
         }
-
-        .bar {
-            width: 12px;
-            background: linear-gradient(to top, rgb(var(--current-rgb)), var(--secondary));
-            border-radius: 6px 6px 0 0;
-            animation: visualizer 1.5s ease-in-out infinite alternate;
-            box-shadow: 0 0 10px rgba(var(--current-rgb), 0.5);
+        
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-25px); }
         }
-
-        @keyframes visualizer {
+        
+        @keyframes flicker {
+            0%, 100% { transform: scale(1) rotate(-5deg); opacity: 1; }
+            50% { transform: scale(1.2) rotate(5deg); opacity: 0.9; }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(0.9); }
+        }
+        
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100px) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(720deg); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* HEART FLOAT ANIMATION */
+        @keyframes heartFloat {
             0% {
-                height: 10px;
+                transform: translateY(100vh) rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
             }
             100% {
-                height: 90px;
+                transform: translateY(-100px) rotate(360deg) scale(1.2);
+                opacity: 0;
             }
         }
-
-        .bar:nth-child(1) { animation-delay: 0.1s; }
-        .bar:nth-child(2) { animation-delay: 0.2s; }
-        .bar:nth-child(3) { animation-delay: 0.3s; }
-        .bar:nth-child(4) { animation-delay: 0.4s; }
-        .bar:nth-child(5) { animation-delay: 0.5s; }
-        .bar:nth-child(6) { animation-delay: 0.6s; }
-        .bar:nth-child(7) { animation-delay: 0.7s; }
-        .bar:nth-child(8) { animation-delay: 0.8s; }
-        .bar:nth-child(9) { animation-delay: 0.9s; }
-        .bar:nth-child(10) { animation-delay: 1.0s; }
-
-        .rgb-lights {
+        
+        .confetti {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            width: 15px;
+            height: 15px;
+            opacity: 0;
             pointer-events: none;
-            z-index: -1;
-            opacity: 0.4;
-            transition: all 1s ease;
-        }
-
-        .light-beam {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(var(--current-rgb), 0.25) 0%, transparent 70%);
-            filter: blur(60px);
-            transition: all 1s ease;
-        }
-
-        .light-beam:nth-child(1) {
-            top: 10%;
-            left: 10%;
-            transform: rotate(45deg);
-        }
-
-        .light-beam:nth-child(2) {
-            top: 60%;
-            right: 15%;
-            transform: rotate(-30deg);
-        }
-
-        .light-beam:nth-child(3) {
-            bottom: 20%;
-            left: 20%;
-            transform: rotate(15deg);
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
             z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(10px);
         }
-
-        .modal-content {
-            background: var(--card-bg);
-            border-radius: 25px;
-            padding: 40px;
-            width: 550px;
-            max-width: 90%;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(var(--current-rgb), 0.2);
-            backdrop-filter: blur(20px);
-            max-height: 80vh;
-            overflow-y: auto;
-            position: relative;
+        
+        .heart-icon {
+            color: #ff4081;
+            animation: pulse 1.5s infinite;
         }
-
-        .modal-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at top left, rgba(var(--current-rgb), 0.1) 0%, transparent 50%);
-            pointer-events: none;
-            border-radius: 25px;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-
-        .modal-header h2 {
-            color: rgb(var(--current-rgb));
-            font-size: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 700;
-        }
-
-        .close-modal {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(var(--current-rgb), 0.2);
-            color: var(--light);
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .close-modal:hover {
-            color: var(--accent);
-            background: rgba(255, 255, 255, 0.15);
-            transform: rotate(90deg);
-        }
-
-        .settings-option {
-            padding: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            margin-bottom: 10px;
-        }
-
-        .settings-option:hover {
-            background: rgba(var(--current-rgb), 0.1);
-            transform: translateX(5px);
-        }
-
-        .settings-option i {
-            color: rgb(var(--current-rgb));
-            font-size: 1.5rem;
-            width: 35px;
-        }
-
-        .settings-option h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        .settings-option p {
-            font-size: 0.95rem;
-            opacity: 0.7;
-        }
-
-        .about-content {
-            line-height: 1.7;
-        }
-
-        .about-content h3 {
-            color: rgb(var(--current-rgb));
-            margin: 25px 0 15px;
-            font-size: 1.4rem;
-            font-weight: 600;
-        }
-
-        .about-content p {
-            margin-bottom: 18px;
-            font-size: 1.05rem;
-        }
-
-        .review-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            border-left: 4px solid rgb(var(--current-rgb));
-            transition: all 0.3s ease;
-        }
-
-        .review-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 12px;
-        }
-
-        .reviewer-name {
-            font-weight: bold;
-            color: rgb(var(--current-rgb));
-            font-size: 1.1rem;
-        }
-
-        .review-date {
-            font-size: 0.85rem;
-            opacity: 0.7;
-        }
-
-        .review-stars {
-            color: gold;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        .exit-options {
-            display: flex;
-            gap: 20px;
-            margin-top: 25px;
-        }
-
-        .btn {
-            padding: 15px 30px;
-            border-radius: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            border: none;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex: 1;
-            justify-content: center;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, rgb(var(--current-rgb)), var(--secondary));
-            color: var(--dark);
-            box-shadow: 0 5px 15px rgba(var(--current-rgb), 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(var(--current-rgb), 0.6);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--light);
-            border: 1px solid rgba(var(--current-rgb), 0.3);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(var(--current-rgb), 0.1);
-            transform: translateY(-3px);
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            margin-top: 60px;
-            border-top: 1px solid rgba(var(--current-rgb), 0.2);
-            font-size: 1rem;
-            opacity: 0.8;
-            position: relative;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(var(--current-rgb), 0.5), transparent);
-        }
-
-        /* Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: rgba(var(--current-rgb), 0.3);
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(var(--current-rgb), 0.5);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1100px) {
-            .main-content {
-                grid-template-columns: 1fr;
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
             }
             
-            .playlist-section {
-                max-height: 500px;
-            }
-        }
-
-        @media (max-width: 900px) {
-            header {
-                flex-direction: column;
-                gap: 25px;
+            .birthday-person {
+                font-size: 3rem;
             }
             
-            .search-container {
-                width: 100%;
-                max-width: 500px;
+            .tagline {
+                font-size: 1.4rem;
             }
             
-            .playlist-selector {
-                gap: 15px;
+            .container {
+                padding: 25px;
             }
             
-            .album-art {
-                width: 280px;
-                height: 280px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .logo h1 {
-                font-size: 2.2rem;
+            .special-message {
+                font-size: 1.1rem;
             }
             
-            .album-art {
-                width: 240px;
-                height: 240px;
-            }
-            
-            .song-title {
-                font-size: 2rem;
-            }
-            
-            nav ul {
-                gap: 20px;
-            }
-            
-            .playlist-btn {
-                padding: 12px 20px;
+            .btn {
+                padding: 14px 24px;
                 font-size: 1rem;
             }
             
-            .exit-options {
-                flex-direction: column;
+            .heart {
+                font-size: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
             }
             
-            .controls {
-                gap: 20px;
+            .birthday-person {
+                font-size: 2.5rem;
             }
             
-            .control-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 1.3rem;
+            .special-message-container {
+                padding: 20px;
             }
             
-            .play-pause {
-                width: 65px;
-                height: 65px;
-                font-size: 1.7rem;
+            .heart {
+                font-size: 18px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="rgb-lights" id="rgb-lights">
-        <div class="light-beam"></div>
-        <div class="light-beam"></div>
-        <div class="light-beam"></div>
-    </div>
-
+    <!-- Hearts Container -->
+    <div class="hearts-container" id="heartsContainer"></div>
+    
+    <!-- Floating decorations -->
+    <div class="decoration" style="top:10%; left:5%;">✨</div>
+    <div class="decoration" style="top:15%; right:8%;">🎁</div>
+    <div class="decoration" style="bottom:20%; left:7%;">🎂</div>
+    <div class="decoration" style="bottom:15%; right:5%;">🌟</div>
+    
     <div class="container">
-        <header>
-            <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-satellite-dish"></i>
-                </div>
-                <h1>RP POP</h1>
-            </div>
-            
-            <div class="search-container">
-                <i class="fas fa-search"></i>
-                <input type="text" id="search-input" placeholder="Search songs, artists, albums...">
-            </div>
-            
-            <nav>
-                <ul>
-                    <li><a href="#" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
-                    <li><a href="#"><i class="fas fa-music"></i> <span>Library</span></a></li>
-                    <li><a href="#" id="settings-btn"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <div class="playlist-selector">
-            <button class="playlist-btn active" data-playlist="all">
-                <i class="fas fa-globe"></i> All Songs
-            </button>
-            <button class="playlist-btn" data-playlist="punjabi">
-                <i class="fas fa-dharmachakra"></i> Punjabi
-            </button>
-            <button class="playlist-btn" data-playlist="hindi">
-                <i class="fas fa-bolt"></i> Hindi
-            </button>
-            <button class="playlist-btn" data-playlist="english">
-                <i class="fas fa-star"></i> English
-            </button>
+        <div class="header">
+            <h1>Happy Birthday!</h1>
+            <div class="birthday-person">Radhika</div>
+            <p class="tagline">Wishing you a day as wonderful as you are!</p>
         </div>
-
-        <main class="main-content">
-            <section class="player-section">
-                <div class="album-art">
-                    <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Album Art" id="album-art">
-                </div>
-                
-                <div class="song-info">
-                    <h2 class="song-title" id="song-title">The Old Mask of New Faces</h2>
-                    <p class="song-artist" id="song-artist">Mystery Ensemble</p>
-                    <span class="song-language" id="song-language">English</span>
-                </div>
-                
-                <div class="progress-area">
-                    <div class="progress-bar" id="progress-bar">
-                        <div class="progress" id="progress"></div>
-                    </div>
-                    <div class="timer">
-                        <span class="current" id="current-time">0:00</span>
-                        <span class="duration" id="duration">4:15</span>
-                    </div>
-                </div>
-                
-                <div class="controls">
-                    <button class="control-btn" id="shuffle-btn">
-                        <i class="fas fa-random"></i>
-                    </button>
-                    <button class="control-btn" id="prev-btn">
-                        <i class="fas fa-step-backward"></i>
-                    </button>
-                    <button class="control-btn play-pause" id="play-pause-btn">
-                        <i class="fas fa-play"></i>
-                    </button>
-                    <button class="control-btn" id="next-btn">
-                        <i class="fas fa-step-forward"></i>
-                    </button>
-                    <button class="control-btn" id="repeat-btn">
-                        <i class="fas fa-redo"></i>
-                    </button>
-                </div>
-                
-                <div class="volume-control">
-                    <i class="fas fa-volume-up"></i>
-                    <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="70">
-                </div>
-                
-                <div class="visualizer">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-            </section>
-            
-            <section class="playlist-section">
-                <h2><i class="fas fa-list"></i> Current Playlist</h2>
-                <ul class="playlist" id="playlist">
-                    <!-- Songs will be populated by JavaScript -->
-                </ul>
-            </section>
-        </main>
         
-        <footer>
-            <p>© 2023 RP POP | Multi-Language Music Experience | All Rights Reserved</p>
-        </footer>
-    </div>
-
-    <!-- Settings Modal -->
-    <div class="modal" id="settings-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2><i class="fas fa-cog"></i> Settings</h2>
-                <button class="close-modal">&times;</button>
+        <!-- Special Birthday Message -->
+        <div class="special-message-container">
+            <h2 class="message-title">
+                <i class="fas fa-heart heart-icon"></i> 
+                A Special Message For You
+                <i class="fas fa-heart heart-icon"></i>
+            </h2>
+            <div class="special-message">
+                <p>Happy Birthday, Radhika! <span class="highlight">🎉🌸✨</span></p>
+                
+                <p>Today isn't just another day—it's a celebration of <span class="highlight">*you*</span> and all the joy you bring to the people around you. <span class="highlight">💖</span> May your birthday be filled with laughter that lasts all day, smiles that never fade, and moments that turn into beautiful memories. <span class="highlight">🎂🥳</span></p>
+                
+                <p>As you step into a new year of your life, may it open doors to new dreams, exciting opportunities, and well-deserved success. May you grow stronger, happier, and more confident with every passing day. Keep chasing what makes you smile, keep believing in yourself, and never forget how special you truly are. <span class="highlight">🌟</span></p>
+                
+                <p>Here's wishing you love, health, happiness, and endless reasons to celebrate—not just today, but all year long. Have a big, bright, and unforgettable birthday, Radhika! <span class="highlight">🎈💫🎉</span></p>
             </div>
-            <div class="settings-options">
-                <div class="settings-option" id="about-option">
-                    <i class="fas fa-info-circle"></i>
-                    <div>
-                        <h3>About RP POP</h3>
-                        <p>Learn more about our music platform</p>
-                    </div>
+        </div>
+        
+        <div class="content">
+            <div class="message-box">
+                <h2 class="box-title"><i class="fas fa-birthday-cake"></i> Birthday Thoughts</h2>
+                <div class="message-text">
+                    <p>Dear Radhika,</p>
+                    <p>On your special day, I want to wish you endless happiness, success in all your endeavors, and love that grows with each passing day.</p>
+                    <p>May this year bring you closer to your dreams and fill your life with beautiful moments. You deserve all the happiness in the world!</p>
+                    <p>Have a fantastic birthday celebration filled with laughter, joy, and wonderful memories!</p>
+                    <p>With lots of love and warm wishes,</p>
+                    <p>Your Well-wisher <i class="fas fa-heart" style="color:#e91e63;"></i></p>
                 </div>
-                <div class="settings-option" id="reviews-option">
-                    <i class="fas fa-star"></i>
-                    <div>
-                        <h3>User Reviews</h3>
-                        <p>See what our users are saying</p>
-                    </div>
-                </div>
-                <div class="settings-option" id="exit-option">
-                    <i class="fas fa-power-off"></i>
-                    <div>
-                        <h3>Exit Application</h3>
-                        <p>Close the RP POP music player</p>
-                    </div>
+            </div>
+            
+            <div class="gallery-box">
+                <h2 class="box-title"><i class="fas fa-images"></i> Birthday Gallery</h2>
+                <div class="gallery">
+                    <div class="gallery-item"></div>
+                    <div class="gallery-item"></div>
+                    <div class="gallery-item"></div>
+                    <div class="gallery-item"></div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- About Modal -->
-    <div class="modal" id="about-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2><i class="fas fa-info-circle"></i> About RP POP</h2>
-                <button class="close-modal">&times;</button>
+        
+        <div class="controls">
+            <button class="btn btn-music" id="musicBtn">
+                <i class="fas fa-music"></i> Play Birthday Music
+            </button>
+            <button class="btn btn-cake" id="cakeBtn">
+                <i class="fas fa-birthday-cake"></i> Show Birthday Cake
+            </button>
+            <button class="btn" id="heartsBtn" style="background: linear-gradient(to right, #ff4081, #e91e63); color: white;">
+                <i class="fas fa-heartbeat"></i> More Hearts
+            </button>
+        </div>
+        
+        <div class="cake-container" id="cakeContainer">
+            <h2>Make a wish and blow out the candle!</h2>
+            <div class="cake">
+                <div class="layer layer-bottom"></div>
+                <div class="layer layer-middle"></div>
+                <div class="layer layer-top"></div>
+                <div class="candle"></div>
+                <div class="flame" id="flame"></div>
             </div>
-            <div class="about-content">
-                <p>Welcome to RP POP – Your Destination for Pure Music Vibes!</p>
-                
-                <p>RP POP is a music-centric platform created with passion and dedication by Raj Pradhan. Designed for music lovers, artists, and dreamers, RP POP brings you the latest tracks, soulful melodies, and vibrant pop culture straight to your screen.</p>
-                
-                <p>At RP POP, we believe music is not just sound — it's emotion, connection, and expression. Whether you're into mainstream pop, indie beats, or something in between, this platform is your digital stage.</p>
-                
-                <p>Founded by Raj Pradhan, a music enthusiast and creative mind, RP POP is built to support fresh talent, promote musical creativity, and celebrate the power of rhythm in everyday life.</p>
-                
-                <p>Join the vibe. Feel the beat. Welcome to RP POP.</p>
-                
-                <h3>Features:</h3>
-                <ul>
-                    <li>Multi-language music library (Punjabi, Hindi, English)</li>
-                    <li>Futuristic RGB lighting that changes with songs</li>
-                    <li>Advanced search and playlist management</li>
-                    <li>Sleek, responsive design for all devices</li>
-                    <li>Regular updates with new tracks and features</li>
-                </ul>
-            </div>
+            <button class="btn" id="blowBtn">
+                <i class="fas fa-wind"></i> Blow Out Candle
+            </button>
         </div>
     </div>
-
-    <!-- Reviews Modal -->
-    <div class="modal" id="reviews-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2><i class="fas fa-star"></i> User Reviews</h2>
-                <button class="close-modal">&times;</button>
-            </div>
-            <div class="reviews-content">
-                <div class="review-item">
-                    <div class="review-header">
-                        <span class="reviewer-name">Priya Sharma</span>
-                        <span class="review-date">2 days ago</span>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>Absolutely love RP POP! The interface is so futuristic and the RGB lighting feature is amazing. Best music player I've used!</p>
-                </div>
-                
-                <div class="review-item">
-                    <div class="review-header">
-                        <span class="reviewer-name">Rahul Verma</span>
-                        <span class="review-date">1 week ago</span>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <p>The multi-language playlist feature is exactly what I needed. Great collection of Punjabi, Hindi and English songs. Keep it up!</p>
-                </div>
-                
-                <div class="review-item">
-                    <div class="review-header">
-                        <span class="reviewer-name">Neha Patel</span>
-                        <span class="review-date">3 weeks ago</span>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>As a music student, I appreciate the clean design and smooth functionality. The visualizer is mesmerizing! Highly recommended.</p>
-                </div>
-                
-                <div class="review-item">
-                    <div class="review-header">
-                        <span class="reviewer-name">Amit Kumar</span>
-                        <span class="review-date">1 month ago</span>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>RP POP has become my daily driver for music. The search function works perfectly and the playlist organization is intuitive.</p>
-                </div>
-            </div>
-        </div>
+    
+    <div class="footer">
+        <p>Made with <i class="fas fa-heart" style="color: #e91e63;"></i> for Radhika's Special Day</p>
+        <p>© 2023 Birthday Celebration | Wishing you the happiest birthday ever!</p>
     </div>
-
-    <!-- Exit Confirmation Modal -->
-    <div class="modal" id="exit-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2><i class="fas fa-power-off"></i> Exit RP POP</h2>
-                <button class="close-modal">&times;</button>
-            </div>
-            <div class="exit-content">
-                <p>Are you sure you want to exit RP POP Music Player?</p>
-                <p>Your current playlist and settings will be saved for your next session.</p>
-                <div class="exit-options">
-                    <button class="btn btn-primary" id="confirm-exit">
-                        <i class="fas fa-check"></i> Yes, Exit
-                    </button>
-                    <button class="btn btn-secondary" id="cancel-exit">
-                        <i class="fas fa-times"></i> Cancel
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+    
+    <audio id="birthdayMusic" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3" type="audio/mpeg">
+    </audio>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // DOM Elements
-            const playPauseBtn = document.getElementById('play-pause-btn');
-            const progressBar = document.getElementById('progress-bar');
-            const progress = document.getElementById('progress');
-            const playlistContainer = document.getElementById('playlist');
-            const currentTimeEl = document.getElementById('current-time');
-            const durationEl = document.getElementById('duration');
-            const songTitle = document.getElementById('song-title');
-            const songArtist = document.getElementById('song-artist');
-            const songLanguage = document.getElementById('song-language');
-            const albumArt = document.getElementById('album-art');
-            const volumeSlider = document.getElementById('volume-slider');
-            const prevBtn = document.getElementById('prev-btn');
-            const nextBtn = document.getElementById('next-btn');
-            const shuffleBtn = document.getElementById('shuffle-btn');
-            const repeatBtn = document.getElementById('repeat-btn');
-            const searchInput = document.getElementById('search-input');
-            const playlistBtns = document.querySelectorAll('.playlist-btn');
-            const rgbLights = document.getElementById('rgb-lights');
-            const root = document.documentElement;
+        // DOM Elements
+        const musicBtn = document.getElementById('musicBtn');
+        const cakeBtn = document.getElementById('cakeBtn');
+        const heartsBtn = document.getElementById('heartsBtn');
+        const cakeContainer = document.getElementById('cakeContainer');
+        const flame = document.getElementById('flame');
+        const blowBtn = document.getElementById('blowBtn');
+        const birthdayMusic = document.getElementById('birthdayMusic');
+        const heartsContainer = document.getElementById('heartsContainer');
+        
+        let isMusicPlaying = false;
+        let isCakeVisible = false;
+        let heartInterval;
+        
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
             
-            // Modal Elements
-            const settingsBtn = document.getElementById('settings-btn');
-            const settingsModal = document.getElementById('settings-modal');
-            const aboutModal = document.getElementById('about-modal');
-            const reviewsModal = document.getElementById('reviews-modal');
-            const exitModal = document.getElementById('exit-modal');
-            const closeModalBtns = document.querySelectorAll('.close-modal');
-            const aboutOption = document.getElementById('about-option');
-            const reviewsOption = document.getElementById('reviews-option');
-            const exitOption = document.getElementById('exit-option');
-            const confirmExit = document.getElementById('confirm-exit');
-            const cancelExit = document.getElementById('cancel-exit');
+            // Randomly assign pink or red color
+            const isPink = Math.random() > 0.5;
+            heart.classList.add(isPink ? 'pink' : 'red');
             
-            // Audio Element
-            const audio = new Audio();
-            let isPlaying = false;
-            let currentSongIndex = 0;
-            let currentPlaylist = 'all';
-            let filteredSongs = [];
+            // Heart icon
+            heart.innerHTML = '❤️';
             
-            // Songs data with languages and RGB colors
-            const songs = [
-                // Punjabi Songs
-                {
-                    title: "Dance Basanti Ungli",
-                    artist: "Punjabi Pop",
-                    duration: "3:45",
-                    cover: "https://tse3.mm.bing.net/th/id/OIP.-YklBUZNXgY_YGa2UODzJAHaEK?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
-                    src: "https://raw.githubusercontent.com/mbehind28-alt/rp-pop7/main/Dance%20Basanti%20Ungli%20(pagalall.com).mp3",
-                    language: "punjabi",
-                    rgb: [255, 105, 180] // Hot Pink
-                },
-                {
-                    title: "Netflix vs Prime Rap",
-                    artist: "Punjabi Comedy",
-                    duration: "3:55",
-                    cover: "https://static.digit.in/Netflix-vs-Amazon-Prime-2.png?tr=w-450",
-                    src: "https://raw.githubusercontent.com/mbehind28-alt/rp-pop7/main/netflix-vs-prime-punjabi-comedy-rap-battle-350727.mp3",
-                    language: "punjabi",
-                    rgb: [50, 205, 50] // Lime Green
-                },
-                {
-                    title: "Bollywood Punjabi",
-                    artist: "Fusion Music",
-                    duration: "4:15",
-                    cover: "https://i.ytimg.com/vi/5r-j7TMOUU4/maxresdefault.jpg",
-                    src: "https://raw.githubusercontent.com/mbehind28-alt/rp-pop7/main/bollywood-punjabi-music-298969.mp3",
-                    language: "punjabi",
-                    rgb: [255, 165, 0] // Orange
-                },
-                {
-                    title: "Punjabi Fusion",
-                    artist: "Modern Beats",
-                    duration: "3:50",
-                    cover: "https://external-preview.redd.it/rnb-and-soul-vocal-samples-collection-v0-OlkRworzj0H6eAwu2zhjyX5InwuIps1YGlBI9EZKLAU.jpg?format=pjpg&auto=webp&s=426dfe4aff9c26c6accc6033183ce1874ed74f17",
-                    src: "https://github.com/mbehind28-alt/rp-pop7/blob/main/punjabi-fusion-217698.mp3",
-                    language: "punjabi",
-                    rgb: [138, 43, 226] // Blue Violet
-                },
-                {
-                    title: "Jee Ni Lagda",
-                    artist: "Karan Aujla",
-                    duration: "4:30",
-                    cover: "https://tse4.mm.bing.net/th/id/OIP.U-rgcprGCkSmJ6Q7glmhiwHaFM?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
-                    src: "https://github.com/mbehind28-alt/rp-pop7/blob/main/Jee_Ni_Lagda_Karan_Aujla.mp3",
-                    language: "punjabi",
-                    rgb: [220, 20, 60] // Crimson
-                },
-                // Hindi Songs
-                {
-                    title: "Bollywood Vibes",
-                    artist: "Hindi Pop",
-                    duration: "3:55",
-                    cover: "https://i.ytimg.com/vi/KaWZsq1HbHc/maxresdefault.jpg",
-                    src: "https://raw.githubusercontent.com/mbehind28-alt/rp-pop7/main/bollywood-375025.mp3",
-                    language: "hindi",
-                    rgb: [255, 69, 0] // Orange Red
-                },
-                {
-                    title: "Meri Aashiqui",
-                    artist: "Arijit Singh",
-                    duration: "4:35",
-                    cover: "https://c.saavncdn.com/430/Aashiqui-2-Hindi-2013-500x500.jpg",
-                    src: "https://github.com/mbehind28-alt/rp-pop7/blob/main/Meri%20Aashiqui%20Aashiqui%202%20128%20Kbps.mp3",
-                    language: "hindi",
-                    rgb: [255, 105, 180] // Hot Pink
-                },
-                // NEW HINDI SONGS ADDED HERE
-                {                
-                    title: "Dilbar Ki Aankhon Ka Thamma",
-                    artist: "Romantic Hindi",
-                    duration: "4:20",
-                    cover: "https://c.saavncdn.com/726/Dilbar-Ki-Aankhon-Ka-From-Thamma-Hindi-2025-20251007121005-500x500.jpg",
-                    src: "https://raw.githubusercontent.com/mbehind28-alt/rp-pop7/main/Dilbar%20Ki%20Aankhon%20Ka%20Thamma%20128%20Kbps.mp3",
-                    language: "hindi",
-                    rgb: [255, 20, 147] // Deep Pink
-                },
-                {
-                    title: "Mera Hua Ek Deewane Ki Deewaniyat",
-                    artist: "Hindi Romantic",
-                    duration: "4:05",
-                    cover: "https://images.filmibeat.com/img/popcorn/movie_posters/deewaniyat-20250822115122-23542.jpg",
-                    src: "https://raw.githubusercontent.com/mbehind28-alt/rp-pop7/main/Mera%20Hua%20Ek%20Deewane%20Ki%20Deewaniyat%20128%20Kbps.mp3",
-                    language: "hindi",
-                    rgb: [0, 191, 255] // Deep Sky Blue
-                },
-                // English Songs
-                {
-                    title: "The Old Mask of New Faces",
-                    artist: "Mystery Ensemble",
-                    duration: "4:15",
-                    cover: "https://i.ytimg.com/vi/xvZqHgFz51I/maxresdefault.jpg",
-                    src: "https://raw.githubusercontent.com/mbehind28-alt/rp-pop7/main/the-old-mask-of-new-faces-409394.mp3",
-                    language: "english",
-                    rgb: [75, 0, 130] // Indigo
-                },
-                {
-                    title: "Dancing in the Stardust",
-                    artist: "Cosmic Beats",
-                    duration: "3:40",
-                    cover: "https://i.ytimg.com/vi/tLbo02qL4DA/maxresdefault.jpg",
-                    src: "https://raw.githubusercontent.com/mbehind28-alt/rp-pop7/main/dancing-in-the-stardust-free-music-no-copyright-203603.mp3",
-                    language: "english",
-                    rgb: [0, 255, 255] // Cyan
-                },
-                {
-                    "title":"Post Malone - rockstar",
-                    "artist": "Post Malone", 
-                    "duration": "4:02",
-                    "cover": "https://i.ytimg.com/vi/UceaB4D0jpo/maxresdefault.jpg",
-                    "src": "https://raw.githubusercontent.com/mbehind28-alt/rp-pop7/main/Post%20Malone%20-%20rockstar%20(Official%20Music%20Video)%20ft.%2021%20Savage.mp3",
-                    "language": "english",
-                    "rgb": [75, 0, 130] // indigo/purple color
-                },
-                { 
-                    "title": "Yung Kai Blue",
-                    "artist": "Max Zhang", 
-                    "duration": "3:34",
-                    "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf9an6nbxqil72Ar00_DyCiTC-cs_i7dPsVg&s",
-                    "src": "https://raw.githubusercontent.com/mbehind28-alt/rp-pop7/321ea3a7ffb010a7ec30e29ec48a33129aa7a6ef/yung%20kai%20-%20blue%20(Lyrics).mp3",
-                    "language": "english",
-                    "rgb": [135, 206, 250]
-               },
-               {
-                    "title": "The-Song-Of-Alone",
-                    "artist": "Max Zhang", 
-                    "duration": "3:23",
-                    "cover": "https://i.ytimg.com/vi/bPs0xFd4skY/maxresdefault.jpg",
-                    "src": "https://raw.githubusercontent.com/mbehind28-alt/rp-pop7/main/the-song-of-alone-410791.mp3",
-                    "language": "english",
-                    "rgb": [135, 206, 250]
-               }
-            ];
+            // Random position
+            heart.style.left = Math.random() * 100 + 'vw';
             
-            // Initialize
-            function init() {
-                filterSongs('all');
-                loadSong(0);
-                renderPlaylist();
-                setupModalEvents();
-            }
+            // Random size
+            const size = Math.random() * 30 + 20;
+            heart.style.fontSize = size + 'px';
             
-            // Setup modal events
-            function setupModalEvents() {
-                // Open settings modal
-                settingsBtn.addEventListener('click', function() {
-                    settingsModal.style.display = 'flex';
-                });
-                
-                // Close modals
-                closeModalBtns.forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        settingsModal.style.display = 'none';
-                        aboutModal.style.display = 'none';
-                        reviewsModal.style.display = 'none';
-                        exitModal.style.display = 'none';
-                    });
-                });
-                
-                // Close modal when clicking outside
-                window.addEventListener('click', function(e) {
-                    if (e.target === settingsModal) {
-                        settingsModal.style.display = 'none';
-                    }
-                    if (e.target === aboutModal) {
-                        aboutModal.style.display = 'none';
-                    }
-                    if (e.target === reviewsModal) {
-                        reviewsModal.style.display = 'none';
-                    }
-                    if (e.target === exitModal) {
-                        exitModal.style.display = 'none';
-                    }
-                });
-                
-                // Settings options
-                aboutOption.addEventListener('click', function() {
-                    settingsModal.style.display = 'none';
-                    aboutModal.style.display = 'flex';
-                });
-                
-                reviewsOption.addEventListener('click', function() {
-                    settingsModal.style.display = 'none';
-                    reviewsModal.style.display = 'flex';
-                });
-                
-                exitOption.addEventListener('click', function() {
-                    settingsModal.style.display = 'none';
-                    exitModal.style.display = 'flex';
-                });
-                
-                // Exit options
-                confirmExit.addEventListener('click', function() {
-                    // In a real app, you would close the application
-                    // For this demo, we'll just show an alert
-                    alert("Thank you for using RP POP! The application would now close.");
-                    // window.close(); // This would close the window in a real app
-                });
-                
-                cancelExit.addEventListener('click', function() {
-                    exitModal.style.display = 'none';
-                });
-            }
+            // Random animation duration
+            const duration = Math.random() * 6 + 4;
+            heart.style.animationDuration = duration + 's';
             
-            // Filter songs by language
-            function filterSongs(language) {
-                if (language === 'all') {
-                    filteredSongs = [...songs];
-                } else {
-                    filteredSongs = songs.filter(song => song.language === language);
+            // Random delay
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            
+            heartsContainer.appendChild(heart);
+            
+            // Remove heart after animation completes
+            setTimeout(() => {
+                if (heart.parentNode) {
+                    heart.remove();
                 }
-                currentSongIndex = 0;
-                renderPlaylist();
-                
-                // Update active playlist button
-                playlistBtns.forEach(btn => {
-                    if (btn.dataset.playlist === language) {
-                        btn.classList.add('active');
-                    } else {
-                        btn.classList.remove('active');
-                    }
-                });
+            }, duration * 1000);
+        }
+        
+        // Generate hearts continuously
+        function startHearts() {
+            // Create initial hearts
+            for (let i = 0; i < 25; i++) {
+                setTimeout(() => createHeart(), i * 150);
             }
             
-            // Render playlist
-            function renderPlaylist() {
-                playlistContainer.innerHTML = '';
+            // Continue creating hearts
+            heartInterval = setInterval(createHeart, 500);
+        }
+        
+        // Start hearts animation
+        startHearts();
+        
+        // More hearts button
+        heartsBtn.addEventListener('click', function() {
+            // Create burst of hearts
+            for (let i = 0; i < 35; i++) {
+                setTimeout(() => createHeart(), i * 70);
+            }
+            
+            // Change button text temporarily
+            heartsBtn.innerHTML = '<i class="fas fa-heartbeat"></i> Hearts Added!';
+            heartsBtn.disabled = true;
+            
+            setTimeout(() => {
+                heartsBtn.innerHTML = '<i class="fas fa-heartbeat"></i> More Hearts';
+                heartsBtn.disabled = false;
+            }, 2000);
+        });
+        
+        // Play birthday music
+        musicBtn.addEventListener('click', function() {
+            if (!isMusicPlaying) {
+                birthdayMusic.play();
+                musicBtn.innerHTML = '<i class="fas fa-pause"></i> Pause Music';
+                isMusicPlaying = true;
                 
-                filteredSongs.forEach((song, index) => {
-                    const li = document.createElement('li');
-                    li.setAttribute('data-index', index);
-                    if (index === currentSongIndex) {
-                        li.classList.add('active');
-                    }
+                // Add dancing animation to birthday person name
+                document.querySelector('.birthday-person').style.animation = 'bounce 0.5s infinite alternate';
+                
+                // Add animation to special message container
+                document.querySelector('.special-message-container').style.animation = 'pulse 2s infinite';
+                
+                // Increase heart generation when music plays
+                clearInterval(heartInterval);
+                heartInterval = setInterval(createHeart, 250);
+            } else {
+                birthdayMusic.pause();
+                musicBtn.innerHTML = '<i class="fas fa-music"></i> Play Birthday Music';
+                isMusicPlaying = false;
+                
+                // Remove dancing animation
+                document.querySelector('.birthday-person').style.animation = 'bounce 2s infinite alternate';
+                document.querySelector('.special-message-container').style.animation = 'none';
+                
+                // Slow down heart generation
+                clearInterval(heartInterval);
+                heartInterval = setInterval(createHeart, 500);
+            }
+        });
+        
+        // Show birthday cake
+        cakeBtn.addEventListener('click', function() {
+            if (!isCakeVisible) {
+                cakeContainer.style.display = 'block';
+                cakeBtn.innerHTML = '<i class="fas fa-times"></i> Hide Cake';
+                isCakeVisible = true;
+                
+                // Scroll to cake
+                cakeContainer.scrollIntoView({ behavior: 'smooth' });
+                
+                // Create hearts around cake
+                for (let i = 0; i < 20; i++) {
+                    setTimeout(() => createHeart(), i * 120);
+                }
+            } else {
+                cakeContainer.style.display = 'none';
+                cakeBtn.innerHTML = '<i class="fas fa-birthday-cake"></i> Show Birthday Cake';
+                isCakeVisible = false;
+            }
+        });
+        
+        // Blow out candle
+        blowBtn.addEventListener('click', function() {
+            flame.style.display = 'none';
+            blowBtn.innerHTML = '<i class="fas fa-fire"></i> Candle Blown Out!';
+            blowBtn.disabled = true;
+            blowBtn.style.background = 'linear-gradient(to right, #4CAF50, #2E7D32)';
+            
+            // Create confetti effect
+            createConfetti();
+            
+            // Create burst of hearts
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => createHeart(), i * 30);
+            }
+            
+            // Show special message
+            setTimeout(() => {
+                alert("🎂 Your wish has been sent to the universe! 🎂\n\nHappy Birthday Radhika! May all your dreams come true! 🌟");
+            }, 500);
+        });
+        
+        // Create confetti effect
+        function createConfetti() {
+            const colors = ['#ff4081', '#e91e63', '#4caf50', '#ffeb3b', '#ff9800', '#9c27b0'];
+            const emojis = ['🎉', '🎊', '🌸', '✨', '🌟', '💫', '🥳', '🎂'];
+            
+            for (let i = 0; i < 80; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
                     
-                    li.innerHTML = `
-                        <div class="playlist-img">
-                            <img src="${song.cover}" alt="${song.title}">
-                        </div>
-                        <div class="playlist-info">
-                            <h4>${song.title}</h4>
-                            <p>${song.artist}</p>
-                            <span class="playlist-language">${song.language.toUpperCase()}</span>
-                        </div>
-                        <div class="playlist-duration">${song.duration}</div>
-                    `;
-                    
-                    li.addEventListener('click', function() {
-                        currentSongIndex = index;
-                        loadSong(currentSongIndex);
-                        if (isPlaying) {
-                            audio.play();
+                    // Randomly decide if it's a color square or an emoji
+                    if (Math.random() > 0.5) {
+                        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                        confetti.style.width = Math.random() * 20 + 10 + 'px';
+                        confetti.style.height = Math.random() * 20 + 10 + 'px';
+                        
+                        // Random shape
+                        if (Math.random() > 0.5) {
+                            confetti.style.borderRadius = '50%';
+                        } else {
+                            confetti.style.borderRadius = '0';
                         }
-                    });
-                    
-                    playlistContainer.appendChild(li);
-                });
-            }
-            
-            // Format time in minutes:seconds
-            function formatTime(seconds) {
-                const min = Math.floor(seconds / 60);
-                const sec = Math.floor(seconds % 60);
-                return `${min}:${sec < 10 ? '0' : ''}${sec}`;
-            }
-            
-            // Load song
-            function loadSong(index) {
-                const song = filteredSongs[index];
-                audio.src = song.src;
-                songTitle.textContent = song.title;
-                songArtist.textContent = song.artist;
-                songLanguage.textContent = song.language.toUpperCase();
-                albumArt.src = song.cover;
-                durationEl.textContent = song.duration;
-                
-                // Update RGB lighting based on song
-                updateRGBLighting(song.rgb);
-                
-                // Reset progress
-                progress.style.width = '0%';
-                currentTimeEl.textContent = '0:00';
-                
-                // Update active song in playlist
-                updateActiveSong();
-            }
-            
-            // Update RGB lighting
-            function updateRGBLighting(rgb) {
-                const [r, g, b] = rgb;
-                root.style.setProperty('--current-rgb', `${r}, ${g}, ${b}`);
-                
-                // Update RGB lights background
-                const lightBeams = document.querySelectorAll('.light-beam');
-                lightBeams.forEach(beam => {
-                    beam.style.background = `radial-gradient(circle, rgba(${r}, ${g}, ${b}, 0.3) 0%, transparent 70%)`;
-                });
-            }
-            
-            // Update active song in playlist
-            function updateActiveSong() {
-                const playlistItems = document.querySelectorAll('.playlist li');
-                playlistItems.forEach((item, index) => {
-                    if (index === currentSongIndex) {
-                        item.classList.add('active');
                     } else {
-                        item.classList.remove('active');
+                        confetti.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                        confetti.style.fontSize = Math.random() * 20 + 20 + 'px';
+                        confetti.style.backgroundColor = 'transparent';
+                        confetti.style.width = 'auto';
+                        confetti.style.height = 'auto';
                     }
-                });
-            }
-            
-            // Play/Pause functionality
-            function togglePlayPause() {
-                if (isPlaying) {
-                    audio.pause();
-                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
-                } else {
-                    audio.play().catch(e => {
-                        console.log("Audio play failed:", e);
-                        // In a real app, you would handle this error appropriately
-                    });
-                    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                }
-                isPlaying = !isPlaying;
-            }
-            
-            // Update progress bar
-            function updateProgress(e) {
-                const { duration, currentTime } = e.srcElement;
-                if (duration) {
-                    const progressPercent = (currentTime / duration) * 100;
-                    progress.style.width = `${progressPercent}%`;
-                    currentTimeEl.textContent = formatTime(currentTime);
-                }
-            }
-            
-            // Set progress
-            function setProgress(e) {
-                const width = this.clientWidth;
-                const clickX = e.offsetX;
-                const duration = audio.duration;
-                
-                audio.currentTime = (clickX / width) * duration;
-            }
-            
-            // Next song
-            function nextSong() {
-                currentSongIndex++;
-                if (currentSongIndex >= filteredSongs.length) {
-                    currentSongIndex = 0;
-                }
-                loadSong(currentSongIndex);
-                if (isPlaying) {
-                    audio.play();
-                }
-            }
-            
-            // Previous song
-            function prevSong() {
-                currentSongIndex--;
-                if (currentSongIndex < 0) {
-                    currentSongIndex = filteredSongs.length - 1;
-                }
-                loadSong(currentSongIndex);
-                if (isPlaying) {
-                    audio.play();
-                }
-            }
-            
-            // Set volume
-            function setVolume() {
-                audio.volume = volumeSlider.value / 100;
-            }
-            
-            // Search functionality
-            function searchSongs() {
-                const searchTerm = searchInput.value.toLowerCase();
-                
-                const playlistItems = document.querySelectorAll('.playlist li');
-                playlistItems.forEach(item => {
-                    const title = item.querySelector('h4').textContent.toLowerCase();
-                    const artist = item.querySelector('p').textContent.toLowerCase();
                     
-                    if (title.includes(searchTerm) || artist.includes(searchTerm)) {
-                        item.style.display = 'flex';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
+                    confetti.style.opacity = '1';
+                    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    
+                    document.body.appendChild(confetti);
+                    
+                    // Animation
+                    confetti.style.animation = `confetti-fall ${Math.random() * 3 + 2}s linear forwards`;
+                    
+                    // Remove after animation
+                    setTimeout(() => {
+                        if (confetti.parentNode) {
+                            confetti.remove();
+                        }
+                    }, 5000);
+                }, i * 30);
+            }
+        }
+        
+        // Create some extra hearts on load
+        window.addEventListener('load', function() {
+            // Add a welcoming alert
+            setTimeout(() => {
+                alert("🎉 Welcome to Radhika's Birthday Celebration! 🎉\n\nPink and red hearts are floating everywhere for you! ❤️\n\nClick 'More Hearts' for extra love!");
+            }, 1000);
+        });
+        
+        // Add click effect to special message
+        document.querySelector('.special-message-container').addEventListener('click', function() {
+            this.style.transform = 'scale(0.99)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 200);
+            
+            // Create hearts when message is clicked
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => createHeart(), i * 70);
             }
             
-            // Event Listeners
-            playPauseBtn.addEventListener('click', togglePlayPause);
-            audio.addEventListener('timeupdate', updateProgress);
-            audio.addEventListener('ended', nextSong);
-            progressBar.addEventListener('click', setProgress);
-            prevBtn.addEventListener('click', prevSong);
-            nextBtn.addEventListener('click', nextSong);
-            volumeSlider.addEventListener('input', setVolume);
-            searchInput.addEventListener('input', searchSongs);
-            
-            // Playlist button clicks
-            playlistBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const playlist = this.dataset.playlist;
-                    filterSongs(playlist);
-                });
+            createConfetti();
+        });
+        
+        // Click anywhere to create hearts
+        document.addEventListener('click', function(e) {
+            // Don't create hearts when clicking on buttons or interactive elements
+            if (!e.target.closest('.btn') && !e.target.closest('.gallery-item') && 
+                !e.target.closest('.special-message-container')) {
+                
+                // Create a few hearts at click position
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.classList.add('heart');
+                        heart.classList.add(Math.random() > 0.5 ? 'pink' : 'red');
+                        heart.innerHTML = '❤️';
+                        
+                        // Position at click
+                        heart.style.left = (e.clientX + (Math.random() * 100 - 50)) + 'px';
+                        heart.style.top = e.clientY + 'px';
+                        
+                        // Random size
+                        const size = Math.random() * 25 + 15;
+                        heart.style.fontSize = size + 'px';
+                        
+                        // Animation
+                        const duration = Math.random() * 4 + 2;
+                        heart.style.animationDuration = duration + 's';
+                        
+                        heartsContainer.appendChild(heart);
+                        
+                        // Remove after animation
+                        setTimeout(() => {
+                            if (heart.parentNode) {
+                                heart.remove();
+                            }
+                        }, duration * 1000);
+                    }, i * 80);
+                }
+            }
+        });
+        
+        // Click on gallery images to create hearts
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                for (let i = 0; i < 10; i++) {
+                    setTimeout(() => createHeart(), i * 100);
+                }
             });
-            
-            // Initialize the player
-            init();
         });
     </script>
 </body>
-
 </html>
